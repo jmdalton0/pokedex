@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/default">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+</head>
+
+<body>
+    <main layout:fragment="content" class="d-flex flex-column flex-1 justify-content-center text-center">
+        <h1 class="display-4">Pokedex</h1>
+        <div class="m-5">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg" alt="Pikachu">
+        </div>
+        <p class="m-1">Search for your favorite Pokemon.</p>
+        <p class="m-1">Save them to your personal Pokedex.</p>
+    </main>
+</body>
+
+</html>

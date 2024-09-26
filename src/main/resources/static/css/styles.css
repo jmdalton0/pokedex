@@ -1,0 +1,48 @@
+html {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    position: relative;
+}
+
+.type {
+    width: 4rem;
+    margin-right: 0.5rem;
+}
+
+.sprite {
+    height: 2.5rem;
+}
+
+#name, .name {
+    text-transform: capitalize;
+}
+
+#sprite {
+    height: 100%;
+}
+
+#caught-btn img {
+    width: 3rem;
+}
+
+#contact-us {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+#contact-us-img {
+    width: 2rem;
+}

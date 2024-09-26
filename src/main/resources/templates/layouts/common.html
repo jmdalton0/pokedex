@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common</title>
+</head>
+
+<body>
+    <header th:fragment="header">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-primary border-bottom box-shadow mb-3" data-bs-theme="dark">
+            <div class="container">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="d-flex navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pokemon">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pokedex">Pokedex</a>
+                        </li>
+                        <li class="nav-item d-flex justify-content-end flex-grow-1">
+                            <a class="nav-link" href="/become-a-trainer">Become a Trainer</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+    </header>
+
+    <footer th:fragment="footer" class="bg-light p-4">
+        <div class="container">
+            <h6>Copyright 2024</h6>
+        </div>
+
+        <div id="contact-us" class="d-flex align-items-center btn btn-info">
+            <p class="m-0">Contact Us</p>
+            <div class="d-flex ms-3 my-1">
+                <img src="/img/contact-us.png" alt="contact-us" id="contact-us-img">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

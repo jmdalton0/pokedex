@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="layouts/default">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            allPokemon();
+        });
+    </script>
+</head>
+
+<body>
+    <main layout:fragment="content" class="container">
+        <h1 th:text=${title} class="display-4"></h1>
+
+        <ul id="all-pokemon" class="list-group">
+            <li class="list-group-item d-flex justify-content-between py-0 pe-0">
+                <div class="d-flex flex-grow-1 justify-content-between align-items-center">
+                    <span class="name"></span>
+                    <img class="sprite"/>
+                </div>
+                <button type="button" class="btn btn-sm btn-primary">
+                    <img src="/img/poke-ball.png" />
+                </button>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="layouts/default">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+</head>
+
+<body>
+    <main layout:fragment="content" class="container">
+        <h1 th:text=${title} class="display-4"></h1>
+
+        <div class="input-group mb-3 my-3">
+            <input id="search" type="text" class="form-control" value="" placeholder="Name of Pokemon" aria-label="Name of Pokemon">
+            <button class="btn btn-primary" type="button" onclick="search()">Search</button>
+        </div>
+
+        <div class="card mb-3">
+            <h3 id="name" class="card-header">&nbsp;</h3>
+            <div class="d-flex">
+                <div class="card-body w-50">
+                    <p>
+                        <span>Order:</span>
+                        <span id="order"></span>
+                    </p>
+                    <p>
+                        <span>Height:</span>
+                        <span id="height"></span>
+                    </p>
+                    <p>
+                        <span>Weight:</span>
+                        <span id="weight"></span>
+                    </p>
+                    <p>
+                        <span>Types:</span>
+                        <span id="types"></span>
+                    </p>
+                </div>
+                <div class="d-flex justify-content-end align-items-center w-50 pe-3">
+                    <img id="sprite" style="max-height: 8rem;" />
+                </div>
+            </div>
+        </div>
+
+        <button id="caught-btn" type="button" onclick="catchPokemon()" class="btn btn-lg btn-secondary w-100 p-0">
+            <img src="/img/poke-ball-gray.png" id="caught-btn-img" />
+        </button>
+    </main>
+</body>
+
+</html>

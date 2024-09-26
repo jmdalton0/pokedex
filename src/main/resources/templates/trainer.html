@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/default">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+</head>
+
+<body>
+    <main layout:fragment="content" class="container">
+        <h1 th:text=${title} class="display-4"></h1>
+        <div>
+            <p>Do you want to be the very best?</p>
+            <p>Like no one ever was?</p>
+        </div>
+        <div>
+            <p>Is to catch them your real test?</p>
+            <p>Is to train them your cause?</p>
+        </div>
+        <h2>Then become a Licensed Pokemon Trainer by following these steps:</h2>
+        <ul>
+            <li>Travel across the land</li>
+            <li>Search far and wide</li>
+            <li>Teach Pokemon to understand the power thats inside</li>
+        </ul>
+    </main>
+</body>
+
+</html>
