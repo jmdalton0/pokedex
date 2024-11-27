@@ -5,5 +5,4 @@ export interface Pokemon {
     weight: number,
     type1: string,
     type2: string,
-    image: string,
 }

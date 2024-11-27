@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Pokemon } from '../../../../models/pokemon';
 
 @Component({
 	selector: 'app-pokemon-list',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 	styleUrl: './pokemon-list.component.css'
 })
 export class PokemonListComponent {
+	pokemon: Pokemon[];
+
+	constructor() {
+		this.pokemon = [];
+	}
 }
