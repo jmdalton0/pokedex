@@ -1,0 +1,15 @@
+label {
+    margin-bottom: 0.2rem;
+}
+
+.form-group {
+    margin: 0.5rem;
+}
+
+.form-column {
+    flex: 1;
+}
+
+.form-column:last-child {
+    padding-left: 1rem;
+}
