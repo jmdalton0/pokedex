@@ -1,0 +1,31 @@
+<div class="d-flex flex-row p-4">
+    <div class="d-flex flex-column w-75 p-4">
+        <h1>{{ pokemon[0].name }}</h1>
+        <table class="w-50">
+            <tr>
+                <td>Index:</td>
+                <td>{{ pokemon[0].id }}</td>
+            </tr>
+            <tr>
+                <td>Height:</td>
+                <td>{{ pokemon[0].height }}</td>
+            </tr>
+            <tr>
+                <td>Weight:</td>
+                <td>{{ pokemon[0].weight }}</td>
+            </tr>
+            <tr>
+                <td>Types:</td>
+                <td class="d-flex flex-column">
+                    <img src="{{ this.pokemonService.formatTypeImageUrl(pokemon[0].type1) }}" alt="type1" class="type">
+                    @if(pokemon[0].type2) {
+                        <img src="{{ this.pokemonService.formatTypeImageUrl(pokemon[0].type2) }}" alt="type2" class="type">
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="d-flex flex-column p-4">
+        <img src="{{ this.pokemonService.formatPokemonImageUrl(pokemon[0].id) }}" alt="{{ pokemon[0].name }}" />
+    </div>
+</div>

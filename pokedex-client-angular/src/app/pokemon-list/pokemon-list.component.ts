@@ -1,17 +1,24 @@
 import { Component } from '@angular/core';
-import { Pokemon } from '../../../../models/pokemon';
+import { PokemonService } from '../services/pokemon.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
 	selector: 'app-pokemon-list',
 	standalone: true,
-	imports: [],
+	imports: [
+		RouterLink,
+	],
 	templateUrl: './pokemon-list.component.html',
 	styleUrl: './pokemon-list.component.css'
 })
 export class PokemonListComponent {
-	pokemon: Pokemon[];
+	allPokemon: any;
 
-	constructor() {
-		this.pokemon = [];
+	constructor(public pokemonService: PokemonService) { }
+
+	ngOnInit() {
+		this.pokemonService.getPokemon().subscribe(
+			res => { this.allPokemon = res },
+		);
 	}
 }

@@ -1,6 +1,7 @@
 import { Request, Response, RequestHandler } from "express"
 
 import * as pokemonDAO from './pokemon-dao';
+import { Pokemon } from "../../../models/pokemon";
 
 export const readAllPokemon: RequestHandler = async (req: Request, res: Response) => {
     try {
@@ -15,7 +16,7 @@ export const readAllPokemon: RequestHandler = async (req: Request, res: Response
 
 export const readPokemonById: RequestHandler = async (req: Request, res: Response) => {
     try {
-        let pokemon = await pokemonDAO.readPokemonById(req.params.id);
+        let pokemon: Pokemon = await pokemonDAO.readPokemonById(req.params.id);
         res.status(200).json(pokemon);
     } catch (e) {
         res.status(500).json({
