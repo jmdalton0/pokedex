@@ -1,14 +1,12 @@
-<div class="p-4">
-    <ul class="d-flex flex-row flex-wrap p-0">
-        @for (pokemon of allPokemon; track $index) {
-            <li class="d-flex flex-column w-25 p-2">
-                <a routerLink="/pokemon/{{ pokemon.id }}" class="card p-2 text-center">
-                    <span>{{ pokemon.name }}</span>
-                    <img src="{{ this.pokemonService.formatPokemonImageUrl(pokemon.id) }}" alt="{{ pokemon.name }}">
-                </a>
-            </li>
-        } @empty {
-            <li class="list-group-item">Pokedex Empty</li>
-        }
-    </ul>
-</div>
+<ul class="d-flex flex-row flex-wrap p-0">
+    @for (pokemon of allPokemon; track $index) {
+    <li class="d-flex flex-column w-25 p-2">
+        <a routerLink="/pokemon/{{ pokemon.id }}" class="card p-2 text-center">
+            <span>{{ pokemon.name }}</span>
+            <img src="{{ this.pokemonService.formatPokemonImageUrl(pokemon.id) }}" alt="{{ pokemon.name }}">
+        </a>
+    </li>
+    } @empty {
+    <li>Pokedex Empty</li>
+    }
+</ul>

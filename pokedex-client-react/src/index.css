@@ -1,0 +1,17 @@
+main {
+    margin-top: 3.8rem;
+    padding: 1.5rem;
+}
+
+.card {
+    text-transform: capitalize;
+    text-decoration: none;
+    border-width: 4px;
+    border-radius: 10%;
+    border-color: #eee;
+}
+
+.card:hover {
+    border-color: #f1af65;
+    cursor: pointer;
+}

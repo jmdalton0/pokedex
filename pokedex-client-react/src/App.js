@@ -1,9 +1,23 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Nav from './Nav';
+import Home from './Home';
+import PokemonList from './PokemonList';
+
 function App() {
 	return (
-		<div className='d-flex'>
-			<h1 className='w-25'>Yo</h1>
-			<h1 className='w-25'>Hello</h1>
-		</div>
+		<>
+			<BrowserRouter>
+				<Nav></Nav>
+				<Routes>
+					<Route path='/' element={<Home></Home>}></Route>
+					<Route path='/pokemon' element={<PokemonList></PokemonList>}></Route>
+				</Routes>
+			</BrowserRouter>
+			<footer className="fixed-bottom bg-dark text-light text-center py-3">
+				<h6 className="m-0">Pokedex Application: Milestone 4</h6>
+			</footer>
+		</>
 	);
 }
 
