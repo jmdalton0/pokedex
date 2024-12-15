@@ -1,13 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Pokemon } from '../../../../models/pokemon';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class PokemonService {
 
-	private url = 'http://localhost:3000';
+	private url = 'http://localhost:8080';
 
 	private types: string[] = [
 		'normal',
