@@ -3,7 +3,7 @@ import Artwork from "./Artwork";
 
 function PokemonCard({id, name}) {
     return (
-        <a className="card p-2 text-center">
+        <a href="/" className="card p-2 text-center">
             <span>{name}</span>
             <Artwork id={id}></Artwork>
         </a>
