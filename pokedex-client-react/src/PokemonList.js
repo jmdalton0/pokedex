@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import PokemonCard from "./PokemonCard";
+import Card from "./Card";
 import data from './data';
 
 function PokemonList() {
@@ -11,13 +11,13 @@ function PokemonList() {
             setPokemon(res.data);
         }
         getPokemon();
-    }, [pokemon]);
+    }, []);
 
     function renderPokemon() {
         return pokemon.map((p) => {
             return (
                 <li key={p.id} className="w-25 p-2">
-                    <PokemonCard id={p.id} name={p.name}></PokemonCard>
+                    <Card id={p.id} name={p.name}></Card>
                 </li>
             );
         });

@@ -1,29 +1,31 @@
 @if(this.id) {
 <div class="d-flex flex-row">
     <div class="d-flex flex-column w-75 p-4">
-        <h1>{{ pokemon.name }}</h1>
+        <h1 class="text-capitalize">{{ pokemon.name }}</h1>
         <table class="w-50">
-            <tr>
-                <td>Index:</td>
-                <td>{{ pokemon.id }}</td>
-            </tr>
-            <tr>
-                <td>Height:</td>
-                <td>{{ pokemon.height }}</td>
-            </tr>
-            <tr>
-                <td>Weight:</td>
-                <td>{{ pokemon.weight }}</td>
-            </tr>
-            <tr>
-                <td>Types:</td>
-                <td class="d-flex flex-column">
-                    <img src="{{ this.pokemonService.formatTypeImageUrl(pokemon.type1) }}" alt="type1" class="type">
-                    @if(pokemon.type2) {
-                    <img src="{{ this.pokemonService.formatTypeImageUrl(pokemon.type2) }}" alt="type2" class="type">
-                    }
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>Index:</td>
+                    <td>{{ pokemon.id }}</td>
+                </tr>
+                <tr>
+                    <td>Height:</td>
+                    <td>{{ pokemon.height }}</td>
+                </tr>
+                <tr>
+                    <td>Weight:</td>
+                    <td>{{ pokemon.weight }}</td>
+                </tr>
+                <tr>
+                    <td>Types:</td>
+                    <td class="d-flex flex-column">
+                        <img src="{{ this.pokemonService.formatTypeImageUrl(pokemon.type1) }}" alt="type1" class="type">
+                        @if(pokemon.type2) {
+                        <img src="{{ this.pokemonService.formatTypeImageUrl(pokemon.type2) }}" alt="type2" class="type">
+                        }
+                    </td>
+                </tr>
+            </tbody>
         </table>
         <div class="flex-grow-1"></div>
         <a routerLink="/edit-pokemon/{{ pokemon.id }}" class="btn btn-primary w-50">Edit</a>

@@ -41,7 +41,7 @@ export class PokemonService {
 
 	public formatTypeImageUrl(type: string) {
 		let typeId = this.types.indexOf(type);
-		if (typeId == -1) {
+		if (typeId === -1) {
 			typeId = 10001;
 		} else {
 			typeId = typeId + 1;
