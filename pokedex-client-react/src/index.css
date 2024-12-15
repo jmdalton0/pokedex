@@ -18,3 +18,8 @@ li {
     border-color: #f1af65;
     cursor: pointer;
 }
+
+.type {
+    width: 4rem;
+    margin-top: 0.5rem;
+}

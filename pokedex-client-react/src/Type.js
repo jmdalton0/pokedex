@@ -29,7 +29,7 @@ function Type({type}) {
     } else {
         typeId = typeId + 1;
 	    let url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iii/emerald/${typeId}.png`;
-        return <img src={url} alt="A Type"/>
+        return <img src={url} alt="A Type" className="type"/>
     }
 }
 
