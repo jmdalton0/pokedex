@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import data from "./data";
 import Artwork from "./Artwork";
 import Type from "./Type";
@@ -8,18 +8,28 @@ function Pokemon() {
     const { id } = useParams();
     const [pokemon, setPokemon] = useState();
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         async function getPokemon() {
             let res = await data.get('/pokemon/' + id);
             let list = res.data;
             if (list?.length > 0) {
                 setPokemon(list[0]);
-            } else {
-                setPokemon();
             }
         }
         getPokemon();
     }, [id]);
+
+    async function deletePokemon() {
+        let res = await data.delete('/pokemon/' + id);
+        if (res.status === 200) {
+            alert('Pokemon Deleted');
+            navigate('/pokemon');
+        } else {
+            alert('Unable to Delete');
+        }
+    }
 
     if (pokemon) {
         return (
@@ -51,8 +61,8 @@ function Pokemon() {
                             </tbody>
                         </table>
                         <div className="flex-grow-1"></div>
-                        {/* <a routerLink="/edit-pokemon/{{ pokemon.id }}" className="btn btn-primary w-50">Edit</a> */}
-                        {/* <button (click)="deletePokemon()" className="btn btn-danger w-50 mt-2">Delete</button> */}
+                        <a href={"/edit-pokemon/" + pokemon.id} className="btn btn-primary w-50">Edit</a>
+                        <button onClick={deletePokemon} className="btn btn-danger w-50 mt-2">Delete</button>
                     </div>
                     <div className="d-flex flex-column p-4">
                         <Artwork id={pokemon.id}></Artwork>

@@ -7,13 +7,20 @@ function PokemonList() {
 
     useEffect(() => {
         async function getPokemon() {
-            let res = await data.get('/pokemon');
-            setPokemon(res.data);
+            try {
+                let res = await data.get('/pokemon');
+                setPokemon(res.data);
+            } catch (e) {
+                setPokemon([]);
+            }
         }
         getPokemon();
     }, []);
 
     function renderPokemon() {
+        if (pokemon.length === 0) {
+            return <li>No Pokemon Saved</li>
+        }
         return pokemon.map((p) => {
             return (
                 <li key={p.id} className="w-25 p-2">

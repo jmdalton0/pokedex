@@ -1,10 +1,14 @@
 main {
-    margin-top: 3.8rem;
+    margin: 3.8rem 0;
     padding: 1.5rem;
 }
 
 li {
     list-style-type: none;
+}
+
+label {
+    margin-bottom: 0.2rem;
 }
 
 .card {
@@ -17,6 +21,18 @@ li {
 .card:hover {
     border-color: #f1af65;
     cursor: pointer;
+}
+
+.form-group {
+    margin: 0.5rem;
+}
+
+.form-column {
+    flex: 1;
+}
+
+.form-column:last-child {
+    padding-left: 1rem;
 }
 
 .type {
